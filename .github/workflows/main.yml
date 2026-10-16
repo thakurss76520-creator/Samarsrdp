@@ -108,15 +108,15 @@ jobs:
                       }
 
                       Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath -UseBasicParsing
-                      Write-Host "âœ… Downloads.bat copied to $downloadPath"
+                      Write-Host "✅ Downloads.bat copied to $downloadPath"
 
                       # Run the batch file for the first time
                       cmd /c $downloadPath
-                      Write-Host "âœ… Downloads.bat executed successfully"
+                      Write-Host "✅ Downloads.bat executed successfully"
                       break
                   }
                   catch {
-                      Write-Host "âŒ Error copying or executing Downloads.bat: $($_.Exception.Message)"
+                      Write-Host "❌ Error copying or executing Downloads.bat: $($_.Exception.Message)"
                       break
                   }
               }
